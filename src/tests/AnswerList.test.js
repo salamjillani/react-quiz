@@ -1,32 +1,32 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import AnswerList from '../components/AnswerList';
-import { describe, test, expect, jest } from '@jest/globals';
+import React from "react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import AnswerList from "../components/AnswerList";
+import { describe, test, expect, jest } from "@jest/globals";
 
-describe('AnswerList', () => {
+describe("AnswerList", () => {
   const props = {
-    correctAnswer: 'Paris',
-    incorrectAnswers: ['London', 'Berlin', 'Madrid'],
+    correctAnswer: "Paris",
+    incorrectAnswers: ["London", "Berlin", "Madrid"],
     selectedAnswer: null,
     isRevealed: false,
-    onSelectAnswer: jest.fn()
+    onSelectAnswer: jest.fn(),
   };
-  
-  test('renders all answers', () => {
+
+  test("renders all answers", () => {
     render(<AnswerList {...props} />);
-    expect(screen.getAllByRole('button')).toHaveLength(4);
+    expect(screen.getAllByRole("button")).toHaveLength(4);
   });
-  
-  test('calls onSelectAnswer with the correct answer when clicked', () => {
+
+  test("calls onSelectAnswer with the correct answer when clicked", () => {
     render(<AnswerList {...props} />);
-    const parisButton = screen.getByTestId('answer-paris');
+    const parisButton = screen.getByTestId("answer-paris");
     fireEvent.click(parisButton);
-    expect(props.onSelectAnswer).toHaveBeenCalledWith('Paris');
+    expect(props.onSelectAnswer).toHaveBeenCalledWith("Paris");
   });
-  
-  test('disables all answers when revealed', () => {
+
+  test("disables all answers when revealed", () => {
     render(<AnswerList {...props} isRevealed={true} />);
-    screen.getAllByRole('button').forEach(button => {
+    screen.getAllByRole("button").forEach((button) => {
       expect(button).toBeDisabled();
     });
   });

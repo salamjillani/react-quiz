@@ -1,9 +1,9 @@
-import React from 'react';
-import { decodeHTML } from '../utils/decodeHTML';
+import React from "react";
+import { decodeHTML } from "../utils/decodeHTML";
 
 const Answer = ({ answer, isSelected, isCorrect, isRevealed, onClick }) => {
   let className = "answer-button";
-  
+
   if (isRevealed) {
     if (isCorrect) {
       className += " answer-correct";
@@ -13,13 +13,13 @@ const Answer = ({ answer, isSelected, isCorrect, isRevealed, onClick }) => {
   } else if (isSelected) {
     className += " answer-selected";
   }
-  
+
   return (
-    <button 
+    <button
       className={className}
       onClick={onClick}
       disabled={isRevealed}
-      data-testid={`answer-${answer.replace(/\s+/g, '-').toLowerCase()}`}
+      data-testid={`answer-${answer.replace(/\s+/g, "-").toLowerCase()}`}
     >
       {decodeHTML(answer)}
     </button>
