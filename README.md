@@ -1,6 +1,6 @@
 # React Quiz App
 
-A modern, responsive trivia quiz application built with React and Tailwind CSS.
+A modern, responsive quiz app built with React and Tailwind CSS.
 
 
 ## Features
