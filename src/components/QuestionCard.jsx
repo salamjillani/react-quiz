@@ -43,10 +43,19 @@ const QuestionCard = ({ question, index, total, score, onAnswerQuestion }) => {
         <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
           Question {index} of {total}
         </h2>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{decodeHTML(question.category)}</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          {decodeHTML(question.category)}
+        </p>
         <div className="flex mt-2">
           {[...Array(3)].map((_, i) => (
-            <span key={i} className={`text-lg ${i < stars ? "text-yellow-400" : "text-gray-300 dark:text-gray-600"}`}>
+            <span
+              key={i}
+              className={`text-lg ${
+                i < stars
+                  ? "text-yellow-400"
+                  : "text-gray-300 dark:text-gray-600"
+              }`}
+            >
               ★
             </span>
           ))}
@@ -70,8 +79,8 @@ const QuestionCard = ({ question, index, total, score, onAnswerQuestion }) => {
         {isRevealed && (
           <div
             className={`text-center py-3 my-4 rounded-lg font-medium ${
-              isCorrect 
-                ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" 
+              isCorrect
+                ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
                 : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
             }`}
           >

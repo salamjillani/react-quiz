@@ -32,15 +32,20 @@ const QuizApp = () => {
       <div className="flex items-center justify-center min-h-screen p-4">
         <div className="w-full max-w-xl bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition-all">
           <div className="p-6 md:p-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">Quiz Complete!</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+              Quiz Complete!
+            </h2>
             <div className="space-y-6">
               <div className="text-center">
-                <p className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">{calculateScorePercentage()}%</p>
+                <p className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">
+                  {calculateScorePercentage()}%
+                </p>
                 <p className="text-lg text-gray-700 dark:text-gray-300">
-                  You got {score.correct} out of {score.total} questions correct.
+                  You got {score.correct} out of {score.total} questions
+                  correct.
                 </p>
               </div>
-              
+
               <button
                 onClick={() => {
                   setCurrentQuestionIndex(0);
