@@ -1,12 +1,76 @@
-# React + Vite
+# React Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive trivia quiz application built with React and Tailwind CSS.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- 📊 Real-time progress tracking and scoring
+- 📱 Responsive design that works on mobile, tablet, and desktop
+- ⭐ Question difficulty indicators
+- 🔄 Randomized answer options for each question
+- ✅ Immediate feedback on answers
+- 📈 Score and potential maximum score visualization
+- 🔄 Ability to restart the quiz
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Demo
+
+https://react-assessquiz.vercel.app
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14.0.0 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/salamjillani/react-quiz.git
+   cd react-quiz
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn start
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+
+## Customization
+
+### Adding Your Own Questions
+
+Edit the `questions.js` file to add your own trivia questions. Each question should follow this format:
+
+```javascript
+{
+  question: "What is the capital of France?",
+  correct_answer: "Paris",
+  incorrect_answers: ["London", "Berlin", "Madrid"],
+  category: "Geography",
+  difficulty: "easy" // can be "easy", "medium", or "hard"
+}
+```
+
+### Styling
+
+The application uses Tailwind CSS for styling. You can customize the appearance by modifying the Tailwind classes in the component files.
+
+
+## Technologies Used
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
