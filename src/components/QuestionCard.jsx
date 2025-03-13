@@ -36,24 +36,24 @@ const QuestionCard = ({ question, index, total, score, onAnswerQuestion }) => {
   const stars = difficultyToStars[question.difficulty] || 0;
 
   return (
-    <div className="question-card">
+    <div className="w-full max-w-xl bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition-all">
       <ProgressBar current={index} total={total} />
 
-      <div className="question-header">
-        <h2 className="question-title">
+      <div className="p-5 border-b border-gray-200 dark:border-gray-700">
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
           Question {index} of {total}
         </h2>
-        <p className="question-category">{decodeHTML(question.category)}</p>
-        <div className="difficulty">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{decodeHTML(question.category)}</p>
+        <div className="flex mt-2">
           {[...Array(3)].map((_, i) => (
-            <span key={i} className={i < stars ? "star" : "star-empty"}>
+            <span key={i} className={`text-lg ${i < stars ? "text-yellow-400" : "text-gray-300 dark:text-gray-600"}`}>
               ★
             </span>
           ))}
         </div>
       </div>
 
-      <div className="question-content">
+      <div className="p-5">
         <Question
           question={question.question}
           difficulty={question.difficulty}
@@ -69,8 +69,10 @@ const QuestionCard = ({ question, index, total, score, onAnswerQuestion }) => {
 
         {isRevealed && (
           <div
-            className={`feedback ${
-              isCorrect ? "feedback-correct" : "feedback-incorrect"
+            className={`text-center py-3 my-4 rounded-lg font-medium ${
+              isCorrect 
+                ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" 
+                : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
             }`}
           >
             {isCorrect ? "Correct!" : "Sorry!"}

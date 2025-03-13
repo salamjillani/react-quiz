@@ -1,18 +1,9 @@
 import React from "react";
 import { decodeHTML } from "../utils/decodeHTML";
 
-const Question = ({ question, difficulty }) => {
-  const difficultyToStars = {
-    easy: 1,
-    medium: 2,
-    hard: 3,
-  };
-
-  const stars = difficultyToStars[difficulty] || 0;
-
+const Question = ({ question }) => {
   return (
-    <div className="question-text">
-      <div className="difficulty-indicator">{Array(stars)}</div>
+    <div className="my-6 text-lg font-medium text-gray-800 dark:text-white">
       {decodeHTML(question)}
     </div>
   );

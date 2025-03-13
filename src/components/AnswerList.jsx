@@ -10,12 +10,11 @@ const AnswerList = ({
 }) => {
   const allAnswers = React.useMemo(() => {
     const answers = [...incorrectAnswers, correctAnswer];
-
     return answers.sort(() => Math.random() - 0.5);
   }, [correctAnswer, incorrectAnswers]);
 
   return (
-    <div className="answer-list">
+    <div className="space-y-3">
       {allAnswers.map((answer, index) => (
         <Answer
           key={index}
