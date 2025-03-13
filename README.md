@@ -5,8 +5,8 @@ A modern, responsive quiz app built with React and Tailwind CSS.
 
 ## Features
 
+- 📱 Responsive design that works on mobile, tablet, and desktop
 - 📊 Real-time progress tracking and scoring
--  📱  Responsive design that works on mobile, tablet, and desktop
 - ⭐ Question difficulty indicators
 - 🔄 Randomized answer options for each question
 - ✅ Immediate feedback on answers
